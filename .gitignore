@@ -1,0 +1,10 @@
+# gitignore
+
+/*
+!.gitignore
+!/src/
+!/tests/
+!/var/
+!composer.json
+!LICENSE
+!README.md
