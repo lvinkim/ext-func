@@ -57,6 +57,26 @@ function get_subdirectorys_in_directory(string $directory)
     return $subdirectorys;
 }
 
+// 获取指定目录下的所有文件（包括所有子目录下的文件）
+function get_allfiles_in_directory(string $directory)
+{
+    $files = get_files_in_directory($directory);
+    $subdirectorys = get_subdirectorys_in_directory($directory);
+
+    foreach ($subdirectorys as $directoryName) {
+
+        $subdirectory = $directory . DIRECTORY_SEPARATOR . $directoryName;
+        $subdirectoryFiles = get_allfiles_in_directory($subdirectory);
+
+        foreach ($subdirectoryFiles as $subdirectoryFile) {
+            $files[] = $directoryName . DIRECTORY_SEPARATOR . $subdirectoryFile;
+        }
+
+    }
+
+    return $files;
+}
+
 // 递归创建多级目录
 function create_directory(string $directory, $mode = 0777)
 {
