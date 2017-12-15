@@ -8,6 +8,19 @@
 
 namespace Ryum\ExtFunc;
 
+// 读取大文件
+function read_huge_file($filepath)
+{
+    if (is_file($filepath)) {
+        $handle = fopen($filepath, 'r');
+        while ($handle && !feof($handle)) {
+            while (($line = fgets($handle)) !== false) {
+                yield $line;
+            }
+        }
+    }
+}
+
 // 获取指定目录下的所有文件
 function get_files_in_directory(string $directory)
 {
