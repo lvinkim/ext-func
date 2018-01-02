@@ -132,3 +132,28 @@ function array_sort_by_key(array $array, $columnName, $type = SORT_DESC, $flags 
 
     return $array;
 }
+
+// 对于 key 值没有双引号的 json ，先将双引号补上
+function ext_json_decode($str, $mode = false)
+{
+    if (preg_match('/\w:/', $str)) {
+        $str = preg_replace('/(\w+):/is', '"$1":', $str);
+    }
+    return json_decode($str, $mode);
+}
+
+// 由 array 生成 array 的 php code
+function code_of_array(array $array, $separator = PHP_EOL)
+{
+    $codes = [];
+    foreach ($array as $key => $value) {
+        if(is_array($value)){
+            $valueCode = code_of_array($value);
+        }else{
+            $valueCode = "'{$value}'";
+        }
+        $codes[] = "'{$key}' => {$valueCode}";
+    }
+    $code = "[{$separator}".implode(",{$separator}", $codes)."{$separator}]";
+    return $code;
+}
