@@ -8,7 +8,6 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$directory = __DIR__.'/../var/logs/create/by/more';
-\Ryum\ExtFunc\create_directory($directory);
-
+$directory = __DIR__ . '/../var/logs/create/by/more';
+\Lvinkim\ExtFunc\ExtFile::createDirectory($directory);
 echo is_dir($directory);

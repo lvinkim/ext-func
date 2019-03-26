@@ -6,10 +6,11 @@
  * Time: 2:03 PM
  */
 
-require __DIR__ . '/../vendor/autoload.php';
+require dirname(__DIR__) . '/vendor/autoload.php';
 
-$path = __DIR__.'/../var/logs';
-$files = \Ryum\ExtFunc\get_files_in_directory($path);
+$path = dirname(__DIR__) . '/var';
+$files = \Lvinkim\ExtFunc\ExtFile::getFilesInDirectory($path);
 print_r($files);
+
 
 

@@ -8,7 +8,7 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$path = __DIR__.'/../var/logs';
-$files = \Ryum\ExtFunc\get_subdirectorys_in_directory($path);
+$path = __DIR__ . '/../var';
+$files = \Lvinkim\ExtFunc\ExtFile::getSubDirectoriesInDirectory($path);
 print_r($files);
 

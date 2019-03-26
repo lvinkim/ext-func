@@ -9,6 +9,6 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$path = __DIR__.'/../var/logs';
-$files = \Ryum\ExtFunc\get_allfiles_in_directory($path);
+$path = __DIR__ . '/../var';
+$files = \Lvinkim\ExtFunc\ExtFile::getAllFilesInDirectory($path);
 print_r($files);

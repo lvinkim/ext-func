@@ -8,4 +8,3 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-\Ryum\ExtFunc\test();

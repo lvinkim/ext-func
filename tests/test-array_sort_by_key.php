@@ -9,19 +9,18 @@
 require __DIR__ . '/../vendor/autoload.php';
 
 $array1 = [];
-for($i=0;$i<10;$i++){
+for ($i = 0; $i < 10; $i++) {
     $array1[] = [
         'name' => uniqid(),
-        'age' => rand(1,100)
+        'age' => rand(1, 100)
     ];
 }
 
-$resutl = \Ryum\ExtFunc\array_sort_by_key($array1, 'name');
-echo json_encode($resutl, JSON_PRETTY_PRINT).PHP_EOL;
+$result = \Lvinkim\ExtFunc\ExtArray::arraySortByKey($array1, 'name');
+echo json_encode($result, JSON_PRETTY_PRINT) . PHP_EOL;
 
-$resutl = \Ryum\ExtFunc\array_sort_by_key($array1, 'age', SORT_ASC);
-echo json_encode($resutl, JSON_PRETTY_PRINT).PHP_EOL;
+$result = \Lvinkim\ExtFunc\ExtArray::arraySortByKey($array1, 'age', SORT_ASC);
+echo json_encode($result, JSON_PRETTY_PRINT) . PHP_EOL;
 
-$resutl = \Ryum\ExtFunc\array_sort_by_key($array1, 'age', SORT_ASC, SORT_STRING);
-echo json_encode($resutl, JSON_PRETTY_PRINT).PHP_EOL;
-
+$result = \Lvinkim\ExtFunc\ExtArray::arraySortByKey($array1, 'age', SORT_ASC, SORT_STRING);
+echo json_encode($result, JSON_PRETTY_PRINT) . PHP_EOL;

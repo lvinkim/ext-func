@@ -10,7 +10,7 @@ require __DIR__ . '/../vendor/autoload.php';
 
 $json = '{key: "value"}';
 
-$array = \Ryum\ExtFunc\ext_json_decode($json, true);
+$array = \Lvinkim\ExtFunc\ExtJson::extJsonDecode($json);
 
-print_r($array);
+var_dump($array);
 

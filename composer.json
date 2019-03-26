@@ -1,20 +1,19 @@
 {
-    "name": "ryum/ext-func",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "vinkim",
-            "email": "vinkim@xiyanghui.com"
-        }
-    ],
-    "minimum-stability": "dev",
-    "require": {
-        "php": ">=7.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "Ryum\\ExtFunc\\": "src/"
-        },
-        "files": ["src/functions.php"]
+  "name": "lvinkim/ext-func",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "vinkim",
+      "email": "lee.vinkim@yahoo.com"
     }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Lvinkim\\ExtFunc\\": "src/"
+    }
+  }
 }

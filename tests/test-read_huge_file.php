@@ -6,11 +6,13 @@
  * Time: 2:54 PM
  */
 
-require __DIR__ . '/../vendor/autoload.php';
+use Lvinkim\ExtFunc\ExtFile;
 
-$filename = __DIR__.'/../var/huge-file.log';
-$lines = \Ryum\ExtFunc\read_huge_file($filename);
+require dirname(__DIR__) . '/vendor/autoload.php';
 
-foreach ($lines as $line){
-    echo $line;
+$fileName = dirname(__DIR__) . '/var/huge-file.log';
+$lines = ExtFile::readHugeFile($fileName);
+
+foreach ($lines as $line) {
+    printf($line);
 }

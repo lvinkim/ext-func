@@ -12,14 +12,14 @@ $array1 = [
     '1',
     '2'
 ];
-$isAssoc = \Ryum\ExtFunc\is_assoc_array($array1);
+$isAssoc = \Lvinkim\ExtFunc\ExtArray::isAssocArray($array1);
 
-echo (!$isAssoc ? '通过' : '不通过') . PHP_EOL;
+assert(!$isAssoc);
 
 $array1 = [
     '1' => '1',
     '2' => '2'
 ];
-$isAssoc = \Ryum\ExtFunc\is_assoc_array($array1) . PHP_EOL;
+$isAssoc = \Lvinkim\ExtFunc\ExtArray::isAssocArray($array1);
 
-echo ($isAssoc ? '通过' : '不通过') . PHP_EOL;
+assert($isAssoc);
