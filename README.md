@@ -4,7 +4,7 @@
 ### 安装
 
 ```
-$ composer require lvinkim/ext-func
+$ composer require lvinkim/ext-func:dev-master
 ```
 
 #### 函数分类
