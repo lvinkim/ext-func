@@ -59,7 +59,7 @@ class ObjectGetter
      */
     public static function getObjectBool($object, string $property): bool
     {
-        $propertyValue = "";
+        $propertyValue = false;
         if (is_object($object)) {
             if (isset($object->{$property})) {
                 $propertyValue = boolval($object->{$property});
