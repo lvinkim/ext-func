@@ -52,6 +52,24 @@ class ObjectGetter
     }
 
     /**
+     * 获取标准对象中的属性值，并以 bool 类型返回
+     * @param $object
+     * @param string $property
+     * @return bool
+     */
+    public static function getObjectBool($object, string $property): bool
+    {
+        $propertyValue = "";
+        if (is_object($object)) {
+            if (isset($object->{$property})) {
+                $propertyValue = boolval($object->{$property});
+            }
+        }
+
+        return $propertyValue;
+    }
+
+    /**
      * 获取标准对象中的属性值，并以 float 类型返回
      * @param $object
      * @param string $property
